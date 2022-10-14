@@ -10,7 +10,7 @@ export default {
 		return (
 			<label className='flex gap-2 items-center'>
 				{Story()}
-				<Text size='sm'>I agree with the terms</Text>
+				<Text size='sm' asChild>I agree with the terms</Text>
 			</label>
 		)
 	}]
