@@ -10,8 +10,6 @@ export default {
 } as Meta<HeadingProps>;
 
 // Must export at least one variant
-export const Default: StoryObj<HeadingProps> = {}
-
 export const Small: StoryObj<HeadingProps> = {
 	args: { size: 'sm' }
 }
