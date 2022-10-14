@@ -8,10 +8,10 @@ export default {
 	args: {},
 	decorators: [(Story) => {
 		return (
-			<div className='flex gap-2 items-center'>
+			<label className='flex gap-2 items-center'>
 				{Story()}
 				<Text size='sm'>I agree with the terms</Text>
-			</div>
+			</label>
 		)
 	}]
 } as Meta;
