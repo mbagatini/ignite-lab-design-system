@@ -1,18 +1,26 @@
+import { FormEvent, useState } from 'react';
 import { EnvelopeSimple, Lock } from 'phosphor-react';
+import axios from 'axios';
+
 import { Heading } from '../components/Heading';
 import { Button } from '../components/Button';
 import { Checkbox } from '../components/Checkbox';
 import { Input } from '../components/Input';
 import { Text } from '../components/Text';
 import Logo from '../assets/logo.svg';
-import { FormEvent, useState } from 'react';
 
 export function Signin() {
 	const [isUserSingedIn, setIsUserSignedIn] = useState(false);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
 	function handleLogin(e: FormEvent) {
 		e.preventDefault();
-		setIsUserSignedIn(true);
+
+		axios.post('/sessions', {
+			email,
+			password,
+		}).then(() => setIsUserSignedIn(true));
 	}
 	return (
 		<div className='w-screen h-screen bg-gray-900 flex flex-col items-center justify-center'>
@@ -33,7 +41,7 @@ export function Signin() {
 				</Text>
 				<Input.Root>
 					<Input.Icon><EnvelopeSimple /></Input.Icon>
-					<Input.Input id='email' type='email' placeholder='john@email.com' />
+					<Input.Input id='email' type='email' placeholder='john@email.com' onChange={(e) => setEmail(e.target.value)} />
 				</Input.Root>
 
 				<Text asChild size='sm' className='font-semibold mt-4 mb-3'>
@@ -41,7 +49,7 @@ export function Signin() {
 				</Text>
 				<Input.Root>
 					<Input.Icon><Lock /></Input.Icon>
-					<Input.Input id='password' type='password' placeholder='*****' />
+					<Input.Input id='password' type='password' placeholder='*****' onChange={(e) => setPassword(e.target.value)} />
 				</Input.Root>
 
 				<Text asChild size='sm' className='mt-4 flex items-center justify-center gap-2 text-gray-200'>
