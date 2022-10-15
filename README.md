@@ -32,6 +32,7 @@ Check more details about it below.
  Other libraries used:
  - [Radix UI](https://www.radix-ui.com): accessible unstyled components
  - [Phosphor Icons](https://phosphoricons.com/): icons
+ - [MSW](https://mswjs.io): API mock
  
 
 ### Why use a Design System?
