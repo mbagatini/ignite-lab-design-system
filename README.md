@@ -18,6 +18,8 @@ This project brings the design area closer to front-end development, using React
 
 Check more details about it below.
 
+![brandbird (2)](https://user-images.githubusercontent.com/17517028/196047250-33dcb46c-417a-473e-b9d5-23de67927f68.png)
+
 
 ### Technology Stack
 
