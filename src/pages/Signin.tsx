@@ -23,49 +23,51 @@ export function Signin() {
 		}).then(() => setIsUserSignedIn(true));
 	}
 	return (
-		<div className='w-screen h-screen bg-gray-900 flex flex-col items-center justify-center'>
-			<img src={Logo} className='h-[120px]' />
+		<div className='w-screen h-screen bg-art-gradient bg-cover bg-no-repeat flex flex-col items-center justify-center'>
+			<div className='p-10 w-[560px] max-w-xs sm:max-w-full rounded-xl bg-gray-900 bg-opacity-90  backdrop-blur-md flex flex-col items-center justify-center'>
+				<img src={Logo} className='h-[120px]' />
 
-			<Heading size='lg' className='mt-4'>
-				Ignite Lab
-			</Heading>
+				<Heading size='lg' className='mt-4'>
+					Ignite Lab
+				</Heading>
 
 
-			<Text size='lg' className='text-gray-400 mt-1'>Faça login e comece a usar</Text>
+				<Text size='lg' className='text-gray-400 mt-1'>Faça login e comece a usar</Text>
 
-			{isUserSingedIn && <Text>Login efetuado</Text>}
+				{isUserSingedIn && <Text>Login efetuado</Text>}
 
-			<form onSubmit={handleLogin} className='flex flex-col mt-10 w-full max-w-sm'>
-				<Text asChild size='sm' className='font-semibold mb-3'>
-					<label htmlFor="email">Endereço de e-mail</label>
-				</Text>
-				<Input.Root>
-					<Input.Icon><EnvelopeSimple /></Input.Icon>
-					<Input.Input id='email' type='email' placeholder='john@email.com' onChange={(e) => setEmail(e.target.value)} />
-				</Input.Root>
+				<form onSubmit={handleLogin} className='flex flex-col mt-10 w-full max-w-sm'>
+					<Text asChild size='sm' className='font-semibold mb-3'>
+						<label htmlFor="email">Endereço de e-mail</label>
+					</Text>
+					<Input.Root>
+						<Input.Icon><EnvelopeSimple /></Input.Icon>
+						<Input.Input id='email' type='email' placeholder='john@email.com' onChange={(e) => setEmail(e.target.value)} />
+					</Input.Root>
 
-				<Text asChild size='sm' className='font-semibold mt-4 mb-3'>
-					<label htmlFor="password">Sua senha</label>
-				</Text>
-				<Input.Root>
-					<Input.Icon><Lock /></Input.Icon>
-					<Input.Input id='password' type='password' placeholder='*****' onChange={(e) => setPassword(e.target.value)} />
-				</Input.Root>
+					<Text asChild size='sm' className='font-semibold mt-4 mb-3'>
+						<label htmlFor="password">Sua senha</label>
+					</Text>
+					<Input.Root>
+						<Input.Icon><Lock /></Input.Icon>
+						<Input.Input id='password' type='password' placeholder='*****' onChange={(e) => setPassword(e.target.value)} />
+					</Input.Root>
 
-				<Text asChild size='sm' className='mt-4 flex items-center justify-center gap-2 text-gray-200'>
-					<label htmlFor="remember">
-						<Checkbox id='remember' />
-						Lembrar de mim por 30 dias
-					</label>
-				</Text>
+					<Text asChild size='sm' className='mt-4 flex items-center justify-center gap-2 text-gray-200'>
+						<label htmlFor="remember">
+							<Checkbox id='remember' />
+							Lembrar de mim por 30 dias
+						</label>
+					</Text>
 
-				<Button type='submit' className='mt-8'>Entrar na plataforma</Button>
-			</form>
+					<Button type='submit' className='mt-8'>Entrar na plataforma</Button>
+				</form>
 
-			<footer className='flex flex-col items-center gap-3 mt-8'>
-				<a href="" className='underline text-gray-400 text-xs hover:text-gray-200'>Esqueceu sua senha?</a>
-				<a href="" className='underline text-gray-400 text-xs hover:text-gray-200'>Não possui conta? Crie uma agora!</a>
-			</footer>
+				<footer className='flex flex-col items-center gap-3 mt-8'>
+					<a href="" className='underline text-gray-400 text-xs hover:text-gray-200'>Esqueceu sua senha?</a>
+					<a href="" className='underline text-gray-400 text-xs hover:text-gray-200'>Não possui conta? Crie uma agora!</a>
+				</footer>
+			</div>
 		</div>
 	)
 }

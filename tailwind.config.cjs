@@ -34,6 +34,9 @@ module.exports = {
 			fontFamily: {
 				sans: 'Inter, sans-serif'
 			},
+			backgroundImage: {
+				'art-gradient': "url('/src/assets/background.png')",
+			}
 		},
 	},
 	plugins: [],
